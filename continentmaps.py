@@ -1,7 +1,3 @@
-#FIXME
-# use data from http://www.flickr.com/places/info/24865672
-
-
 import geonamescache
 import csv
 
@@ -12,12 +8,13 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 
 gc = geonamescache.GeonamesCache()
+#FIXME use data from http://www.flickr.com/places/info/24865672
 geocontinents = gc.get_continents()
 geocountries = gc.get_countries()
 continents = {}
 
 with open('data/GeoLiteCity-Location.csv', 'rb') as csvin:
-#with open('geotest.csv', 'rb') as csvin:
+#with open('data/geotest.csv', 'rb') as csvin:
     reader = csv.reader(csvin)
     next(reader)  # copyright notice
     next(reader)  # headings
