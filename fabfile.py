@@ -13,5 +13,18 @@ def contmaps(continentcode=None):
         continentcodes = [continentcode]
 
     for cc in continentcodes:
-        print(cc)
-        #local('python continentmaps.py %s' % cc)
+        local('./continentmap.py %s' % cc)
+
+
+def worldmaps(markersize=None):
+    markersizes = [.1, .01, .005]
+    if markersize:
+        markersizes = [markersize]
+
+    for ms in markersizes:
+        local('./worldmap.py %s' % ms)
+
+
+def maps():
+    contmaps()
+    worldmaps()

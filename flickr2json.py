@@ -7,7 +7,7 @@ with open('flickr-places-data.txt', 'r') as f:
 
 for rec in geocont.split('\n\n'):
     contcode, bbox, coords = rec.split('\n')
-    lat, lon = [float(c.strip()) for c in coords.split('\t')[1].split(',')]
+    lon, lat = [float(c.strip()) for c in coords.split('\t')[1].split(',')]
     w, s, e, n = [float(c.strip()) for c in bbox.split('\t')[1].split(',')]
 
     geocontinents[contcode] = {
